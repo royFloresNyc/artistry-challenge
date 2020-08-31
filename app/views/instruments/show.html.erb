@@ -1,0 +1,12 @@
+<h1><%= @instrument.name %></h1>
+<h3><em><%= @instrument.classification %></em></h3>
+
+
+<% if @instrument.artists.count > 0  %>
+    <h3>Artists who play this instrument:</h3>    
+        <ul>
+            <% @instrument.artists.each do |artist| %>
+                <li><%= artist.name  %></li>
+            <% end %>
+        </ul>
+<% end %>
