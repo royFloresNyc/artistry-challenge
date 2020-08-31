@@ -1,5 +1,12 @@
 <h1>Artist Form</h1>
 
+<% if flash[:errors] %>
+    <h4><em>Errors:</em></h4>
+    <% flash[:errors].each do |error| %>
+        <p>- <%= error %></p>
+    <% end %>
+<% end %>
+
 <%= form_for @artist do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br><br>

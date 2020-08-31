@@ -7,3 +7,10 @@
         <li><%= instrument.name %></li>
     <% end %>
 </ul>
+<%# link_to "Add Instrument", new_artist_instrument_path %>
+<%= form_for @artist_instrument = ArtistInstrument.new do |f| %>
+    <%= f.hidden_field :artist_id, value: @artist.id %>
+    <%= f.label "Add Instrument" %>
+    <%= f.collection_select :instrument_id, Instrument.all, :id, :name %>
+    <%= f.submit "Add"%>
+<% end %>
